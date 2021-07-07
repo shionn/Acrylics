@@ -14,6 +14,7 @@
 <meta name="mobile-web-app-capable" content="yes" />
 <link rel="shortcut icon" type="image/x-icon" href='<spring:url value="/img/favicon.ico"/>'/>
 <link rel="stylesheet" href="<spring:url value="/css/style.css"/>" />
+<script src="https://kit.fontawesome.com/064a1a2fe3.js" crossorigin="anonymous"></script>
 <title>AcrylicsDb - ${title} - by Shionn</title>
 </head>
 <body>
@@ -21,13 +22,13 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="#">Home<span class="fa fa-2 fa-bars"></span></a>
+					<a href='<spring:url value="/"/>'><i class="fas fa-home"></i> Home</a>
 				</li>
 				<li>
-					<a href='<spring:url value="/c"/>'>Collection</a>
+					<a href='<spring:url value="/c"/>'><i class="fas fa-bookmark"></i> Collection</a>
 				</li>
 				<li>
-					<a href='<spring:url value="/p"/>'>Plans</a>
+					<a href='<spring:url value="/p"/>'><i class="fas fa-book-open"></i> Plans</a>
 				</li>
 				<c:if test="${user.admin}">
 					<li>
@@ -36,20 +37,20 @@
 				</c:if>
 				<li>
 					<form action='<spring:url value="/s"/>'>
-						<span class="autocomplete">
-							<input type="text" name="name"
-									placeholder="Quick Search" autocomplete="off"
-									data-source="<spring:url value="/s"/>" data-length="3"/>
-						</span>
+						<i class="fas fa-search"></i>
+						<input type="text" name="name"
+								placeholder="Quick Search" autocomplete="off"
+								data-source="<spring:url value="/s"/>" data-length="3"/>
 					</form>
 				</li>
 			</ul>
 		</nav>
-	</header><main>
+	</header>
+	<main>
 		<jsp:invoke fragment="content" />
 	</main>
-	<footer class="container">
-		<div>AcrylicsDb by <a href="shionn@gmail.com">shionn</a></div>
+	<footer>
+		AcrylicsDb by <a href="mailto:shionn@gmail.com">shionn</a>
 	</footer>
 	<div class="modal"></div>
 	<script type="text/javascript" src='<spring:url value="/js/scripts.js"/>'></script>

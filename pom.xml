@@ -35,35 +35,28 @@
 				<version>3.7.2</version>
 				<executions>
 					<execution>
+						<phase>generate-sources</phase>
 						<goals>
 							<goal>update-stylesheets</goal>
 						</goals>
-						<phase>generate-resources</phase>
+						<configuration>
+							<includes>
+								<include>style.scss</include>
+							</includes>
+							<excludes>
+								<exclude>variables.scss</exclude>
+							</excludes>
+							<destination>src/main/webapp/css</destination>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<sassOptions>
-						<always_update>false</always_update>
-						<style>:expanded</style>
-						<debug_info>false</debug_info>
-					</sassOptions>
-					<useBourbon>true</useBourbon>
-					<resources>
-						<resource>
-							<source>
-								<directory>${basedir}/src/main/scss</directory>
-								<includes>
-									<include>style.scss</include>
-								</includes>
-								<excludes>
-									<exclude>variables.scss</exclude>
-								</excludes>
-							</source>
-							<destination>${basedir}/src/main/webapp/css</destination>
-						</resource>
-					</resources>
-				</configuration>
 			</plugin>
+			<!-- <groupId>org.javalite</groupId> -->
+			<!-- <artifactId>activeweb-sass-maven-plugin</artifactId> -->
+			<!-- <version>3.0-j11</version> -->
+			<!-- <groupId>org.jasig.maven</groupId> -->
+			<!-- <artifactId>sass-maven-plugin</artifactId> -->
+			<!-- <version>1.1.1</version> -->
 		</plugins>
 	</build>
 
